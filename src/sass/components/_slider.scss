@@ -1,0 +1,121 @@
+.splide.recommendationWidget {
+  --color-white: #ffffff;
+  --color-gray: #757575;
+  --color-black: #161616;
+  --color-button-arrow: #f4f4f4;
+  --color-pagination: #e0e0e0;
+
+  // Set amount of slides-per-swipe in Classic Slider:
+  --elements-on-swipe: 2;
+
+  font-family: Inter;
+  position: relative;
+
+  .splide__slide:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .splide__arrow {
+    position: absolute;
+    top: calc(50% - 20px);
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-button-arrow);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+
+    &::after {
+      content: url("../images/icons/arrow-left.svg");
+      position: relative;
+      right: 2px;
+      top: 2px;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+
+    &--next {
+      transform: rotate(180deg);
+    }
+  }
+
+  .splide__list {
+    padding-bottom: 50px !important;
+  }
+
+  .splide__arrow:disabled {
+    background-color: var(--color-white);
+  }
+
+  .splide__arrow:hover {
+    background-color: var(--color-white);
+    opacity: 1;
+  }
+
+  // Modern Slider's specific styles
+
+  &[type="modern"] {
+    .splide__pagination {
+      display: none;
+    }
+
+    .my-slider-progress {
+      background-color: #ccc;
+    }
+
+    .my-slider-progress-bar {
+      background-color: var(--color-black);
+      height: 4px;
+      transition: width 400ms ease;
+      width: 0;
+    }
+
+    @media (max-width: 480px) {
+      .my-slider-progress-bar {
+        display: none;
+      }
+
+      .splide__list {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
+
+  // Classic Slider's specific styles
+
+  &[type="classic"] {
+    .splide__pagination {
+      padding: 0;
+    }
+
+    .splide__pagination__page {
+      background-color: var(--color-pagination);
+      border: 0;
+      border-radius: 50%;
+      display: inline-block;
+      height: 10px;
+      margin: 0 12px;
+      padding: 0;
+      transition: background-color 0.2s ease;
+      width: 10px;
+    }
+
+    .splide__pagination__page.is-active {
+      background: var(--color-black);
+    }
+
+    @media (max-width: 480px) {
+      .splide__slide:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+}
