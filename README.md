@@ -61,12 +61,6 @@ This is the basic HTML structure that recommendation-widget requires:
 
 This component was built on top of the library [Splide](https://splidejs.com/ "Splide") and adapted for mobile and desktop devices.
 
-Changing attribute` type` to` type="modern"` or `type="modern"` in runtime will cause changes in styling and scrolling behaviour of components. You cah handle many instances of this sliders on single page.
+Changing attribute `type` to `type="classic"` or `type="modern"` in the runtime will cause changes in styling and scrolling behaviour of components. You can handle many instances of these sliders on a single page.
 
-To change amount of elements-per-scroll in "classic widget" you can change CSS custom variable `--elements-on-swipe` in the file `/src/sass/components/_slider.scss`.
-
-## Running
-
-```sh
-node dist/bundle.js
-```
+To change amount of scrolling elements in "classic widget" you can change CSS custom variable `--elements-on-swipe` in the file `/src/sass/components/_slider.scss`.
